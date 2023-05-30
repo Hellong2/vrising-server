@@ -236,7 +236,7 @@ fi
 ##        so that users are given the option of manually being able to persist edits to the files?
 ## TODO: This should be refactored to use functions, to cut down on boilerplate etc.
 # Apply the server settings
-if [ "$V_RISING_SERVER_DEFAULT_HOST_SETTINGS" = "true" ]; then
+# if [ "$V_RISING_SERVER_DEFAULT_HOST_SETTINGS" = "true" ]; then
 	# jq '.Name |= env.V_RISING_SERVER_NAME' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	# jq '.Description |= env.V_RISING_SERVER_DESCRIPTION' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	# jq '.Port |= (env.V_RISING_SERVER_GAME_PORT|tonumber)' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
@@ -252,7 +252,7 @@ if [ "$V_RISING_SERVER_DEFAULT_HOST_SETTINGS" = "true" ]; then
 	# jq '.SaveName |= env.V_RISING_SERVER_SAVE_NAME' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	# jq '.AutoSaveCount |= (env.V_RISING_SERVER_AUTO_SAVE_COUNT|tonumber)' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	# jq '.AutoSaveInterval |= (env.V_RISING_SERVER_AUTO_SAVE_INTERVAL|tonumber)' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
-fi
+# fi
 
 ## TODO: Why would we copy over the defaults if we have the persistence path set?
 # echo "Applying custom server configuration file.."
