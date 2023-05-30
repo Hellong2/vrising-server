@@ -239,7 +239,7 @@ fi
 if [ "$V_RISING_SERVER_DEFAULT_HOST_SETTINGS" = "true" ]; then
 	jq '.Name |= env.V_RISING_SERVER_NAME' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	jq '.Description |= env.V_RISING_SERVER_DESCRIPTION' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
-	jq '.Port |= (env.V_RISING_SERVER_GAME_PORT|tonumber' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
+	jq '.Port |= (env.V_RISING_SERVER_GAME_PORT|tonumber)' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	jq '.QueryPort |= (env.V_RISING_SERVER_QUERY_PORT|tonumber)' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	jq '.Address |= env.V_RISING_SERVER_BIND_IP' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
 	jq '.MaxConnectedUsers |= (env.V_RISING_SERVER_MAX_CONNECTED_USERS|tonumber)' "${V_RISING_SERVER_HOST_CONFIG_FILE}" > "/tmp/ServerHostSettings.json.tmp" && cp -f "/tmp/ServerHostSettings.json.tmp" "${V_RISING_SERVER_HOST_CONFIG_FILE}"
